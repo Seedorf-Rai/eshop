@@ -1,0 +1,40 @@
+@extends('backend.app')
+@section('content')
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+               <a href="/category/create" class="btn btn-primary">Add Category</a>
+            </div>
+            <div class="card-body">
+                <table class="table" id="datatable">
+                   <thead>
+                    <tr>
+                        <th>SN</th>
+                        <th>Photo</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                   </thead>
+                   
+                    @foreach ($categories as $item)
+                   <tbody>
+                    <tr>
+                        <td>{{ $item->id }}</td>
+                        <td><img src="{{ asset($item->photo) }}" width="30" alt=""></td>
+                        <td>{{ $item->name }}</td>
+                        <td>
+                            <a href="/category/{{ $item->id }}/edit" class="btn btn-info">Edit</a>
+                        </td>
+                    </tr>
+                   </tbody>
+                @endforeach
+                   
+                </table>
+            </div>
+        </div>
+    </div>
+@endsection
+
+
+
+
