@@ -24,6 +24,7 @@
                         <td>{{ $item->name }}</td>
                         <td>
                             <a href="/category/{{ $item->id }}/edit" class="btn btn-info">Edit</a>
+                            <a href="" class="btn btn-success">Show</a>
                         </td>
                     </tr>
                    </tbody>

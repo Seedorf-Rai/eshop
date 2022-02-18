@@ -35,6 +35,7 @@
   <link href="/assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="/assets/demo/demo.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
   <style>
       .button-51 {
@@ -85,6 +86,11 @@
     padding: 16px 32px;
   }
 }
+
+.ck-editor__editable_inline {
+    min-height: 200px;
+}
+
   </style>
 </head>
 
@@ -112,7 +118,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="/product">
               <i class="now-ui-icons design_app"></i>
               <p>Products</p>
             </a>
@@ -257,12 +263,20 @@
   <script src="/assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="/assets/demo/demo.js"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script>
+ 
   <script>
     $(document).ready( function () {
     $('#datatable').DataTable();
 } );
   </script>
-
+<script>
+  ClassicEditor
+      .create( document.querySelector( '#description' ) )
+      .catch( error => {
+          console.error( error );
+      } );
+</script>
 </body>
 
 </html>
