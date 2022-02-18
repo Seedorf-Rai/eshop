@@ -16,8 +16,9 @@
                     </tr>
                    </thead>
                    
-                    @foreach ($categories as $item)
+                  
                    <tbody>
+                    @foreach ($categories as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
                         <td><img src="{{ asset($item->photo) }}" width="30" alt=""></td>
@@ -27,8 +28,9 @@
                             <a href="" class="btn btn-success">Show</a>
                         </td>
                     </tr>
+                    @endforeach
                    </tbody>
-                @endforeach
+             
                    
                 </table>
             </div>
