@@ -127,10 +127,10 @@
          
           
           <li>
-            <a href="./map.html">
+            <a href="/about">
               <i class="now-ui-icons location_map-big"></i>
               
-              <p>Orders</p>
+              <p>About us</p>
             </a>
           </li>
           <li>
