@@ -27,7 +27,7 @@
                         <td>{{ $item->id }}</td>
                         <td><img src="{{ asset($item->photo) }}" width="80" alt=""></td>
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->category_id }}</td>
+                        <td class="text-primary">{{ $item->category->name }}</td>
                         <td>{{ $item->price }}</td>
                         <td>{{ $item->discount_percent }}</td>
                         <td>{{ $item->selling_price }}</td>
