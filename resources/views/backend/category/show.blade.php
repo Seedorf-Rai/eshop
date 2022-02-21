@@ -15,6 +15,7 @@
                             <th>Price</th>
                             <th>Discount(%)</th>
                             <th>Selling Price</th>
+                            <th>In Stock</th>
                             <th>Action</th>
                         </tr>
                        
@@ -28,6 +29,7 @@
                         <td>{{ $item->price }}</td>
                         <td>{{ $item->discount_percent }}</td>
                         <td>{{ $item->selling_price }}</td>
+                        <td class="{{ $item->stock == 0 ? 'text-danger':' ' }}">{{ $item->stock == 1 ? 'Available':'Out of Stock' }}</td>
                         <td>
                             <a href="/product/{{ $item->id }}/edit" class="btn btn-info">Edit</a>
                         </td>

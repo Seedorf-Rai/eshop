@@ -22,8 +22,15 @@
                     <input id="discount" class="form-control" type="text" name="discount_percent" value="{{ $products->discount_percent }}">
                 </div>
                 <div class="form-group">
+                    <label for="stock">In Stock *</label>
+                    <select id="stock" class="form-control" name="stock" >
+                       <option value="1" {{ $products->stock == 1 ?'selected':' ' }}>Available</option>
+                       <option value="0" {{ $products->stock == 0 ? 'selected':' '  }}>Out of Stock</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="photo">Add Image</label>
-                    <input id="photo" class="form-control-file" type="file" name="image" accept="image/*">
+                    <input id="photo" class="form-control-file" type="file" name="photo" accept="image/*">
                 </div>
                 <div>
                     <img src="{{ asset($products->photo) }}" width="120" alt="">

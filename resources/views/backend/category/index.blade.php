@@ -30,9 +30,10 @@
                     </tr>
                     @endforeach
                    </tbody>
-             
                    
                 </table>
+                <a href="/category" class="btn btn-primary">Top</a>
+
             </div>
         </div>
     </div>

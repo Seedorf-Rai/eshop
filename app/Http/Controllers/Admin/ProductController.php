@@ -92,6 +92,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->price = $request->price;
         $product->discount_percent = $request->discount_percent;
+        $product->stock = $request->stock;
         $product->selling_price = $request->price-($request->discount_percent * $request->price)/100 ;
         $product->description = $request->description;
         $product->category_id = $request->category_id;
@@ -101,8 +102,10 @@ class ProductController extends Controller
             $newName = time() . $file->getClientOriginalName();
             $file->move('product-photo',$newName);
             $product->photo = "product-photo/$newName";
+           
         }
         $product->update();
+        
         toast('Your Product Has Been Updated','success');
         return redirect('/product');
     }
