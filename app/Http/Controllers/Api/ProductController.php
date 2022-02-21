@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CategoryResource;
 use App\Http\Resources\ProductResource;
-use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return CategoryResource::collection($categories);
+        //
     }
 
     /**
@@ -30,6 +27,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        //
     }
 
     /**
@@ -40,10 +38,9 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        
-        $products = Product::where('category_id',$id)->get();
-        return ProductResource::collection($products);
-        }
+        $product = Product::find($id);
+        return new ProductResource($product);
+    }
 
     /**
      * Update the specified resource in storage.
